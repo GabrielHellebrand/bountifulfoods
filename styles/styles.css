@@ -1,0 +1,94 @@
+/* styles go here */
+
+.large-image {
+    /* Styles for large images */
+}
+
+.medium-image {
+    /* Styles for medium images */
+}
+
+.small-image {
+    /* Styles for small images */
+}
+
+.google-map {
+    /* Styles for the Google Map */
+}
+
+.footer-content {
+    /* Styles for the footer content */
+}
+
+.resource-attribution,
+.social-media-links,
+.contact-information {
+    /* Styles for individual sections in the footer */
+}
+/* Reset some default styles for consistency */
+body, h1, h2, h3, p, ul, ol, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Your Chosen Font', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Implement responsive images with lazy loading */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Apply lazy loading to images */
+img[loading="lazy"] {
+    opacity: 0;
+}
+
+img[loading="lazy"].loaded {
+    opacity: 1;
+}
+
+/* Define common styles for sections */
+section {
+    margin: 20px 0;
+}
+
+/* Create a consistent navigation bar */
+nav {
+    background-color: #4285f4;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+/* Apply wayfinding styles to navigation links */
+nav a:hover {
+    border-bottom: 2px solid #fff;
+}
+
+/* Create a clean and consistent footer */
+footer {
+    background-color: #f2f2f2;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Style the last modified date */
+#lastModified {
+    font-style: italic;
+    color: #666;
+}

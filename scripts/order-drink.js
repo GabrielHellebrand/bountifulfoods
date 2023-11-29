@@ -72,4 +72,10 @@ document.addEventListener("DOMContentLoaded", function() {
             // For example, you can redirect to a review platform or open a review form
             alert("Thank you for your order! Please consider leaving a review on social media.");
         }
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get the last modified date of the page
+            const lastModifiedElement = document.getElementById("lastModified");
+            const lastModifiedDate = document.lastModified;
+            lastModifiedElement.innerText = "Page last modified: " + lastModifiedDate;
+        });
 });
