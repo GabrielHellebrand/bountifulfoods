@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Order Your Specialty Drink</title>
+</head>
+<body>
+
+<header>
+    <!-- Navigation bar, similar to Home page -->
+    <!-- ... -->
+</header>
+
+<section class="order-form-section">
+    <h1>Order Your Specialty Drink</h1>
+    <form id="orderForm" action="order-confirmation.html" method="post">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="fruit1">Select Fruit 1:</label>
+        <select id="fruit1" name="fruit1" required>
+            <!-- Options will be dynamically populated using JavaScript -->
+        </select>
+
+        <label for="fruit2">Select Fruit 2:</label>
+        <select id="fruit2" name="fruit2" required>
+            <!-- Options will be dynamically populated using JavaScript -->
+        </select>
+
+        <label for="fruit3">Select Fruit 3:</label>
+        <select id="fruit3" name="fruit3" required>
+            <!-- Options will be dynamically populated using JavaScript -->
+        </select>
+
+        <label for="specialInstructions">Special Instructions:</label>
+        <textarea id="specialInstructions" name="specialInstructions" rows="4"></textarea>
+
+        <p>Payment is received when the drink is picked up.</p>
+
+        <button type="submit">Submit Order</button>
+    </form>
+</section>
+<!-- Similar structure to the Order Drink page -->
+<!-- Add a section for order confirmation details -->
+<section class="order-confirmation-section">
+    <h1>Order Confirmation</h1>
+    <div id="orderDetails">
+        <!-- Order details will be dynamically populated using JavaScript -->
+    </div>
+
+    <p>Thank you for your order!</p>
+    <p>Your estimated pickup time is [Insert Estimated Time].</p>
+    <p>If you have any issues, please contact us at [Your Contact Information].</p>
+    
+    <button onclick="leaveReview()">Leave a Review</button>
+</section>
+<script src="order-confirmation.js"></script>
+<script src="order-drink.js"></script>
+</body>
+</html>
