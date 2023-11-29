@@ -13,4 +13,4 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById("humidity").innerText = "Humidity: " + data.main.humidity + "%";
         })
         .catch(error => console.error("Error fetching weather data:", error));
-});
+}); 
