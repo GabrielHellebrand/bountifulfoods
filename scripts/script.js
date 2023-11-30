@@ -10,7 +10,7 @@ async function getWeatherData() {
   
       // Populate current weather details
       document.getElementById('weather-details').innerHTML = `
-        <p>Temperature: ${data.main.temp}°C</p>
+        <p>Temperature: ${data.main.temp}°F</p>
         <p>Condition: ${data.weather[0].description}</p>
         <p>Humidity: ${data.main.humidity}%</p>
       `;
