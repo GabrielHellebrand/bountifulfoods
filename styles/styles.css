@@ -1,94 +1,84 @@
-/* styles go here */
-
-.large-image {
-    /* Styles for large images */
+body {
+  font-family: 'Cookie', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.medium-image {
-    /* Styles for medium images */
+nav {
+  background-color: #ff69b4; /* Pink */
+  padding: 10px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.small-image {
-    /* Styles for small images */
+.nav-list {
+  list-style-type: none;
+  display: flex;
 }
 
-.google-map {
-    /* Styles for the Google Map */
+.nav-list li {
+  margin: 0 15px;
+}
+
+.menu-icon {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.main-content {
+  padding: 20px;
+  background-color: #ff69b4; /* Pink */
+}
+
+.weather-card,
+.drink-info-card {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  background-color: aqua; /* Blue */
+}
+
+.drink-info-card > div {
+  flex: 1 0 calc(33.33% - 20px);
+}
+
+.drink-info-card p {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.responsive-image {
+  max-width: 100%;
+  height: auto;
+}
+
+footer {
+  background-color: #ffa500; /* Orange */
+  color: white;
+  padding: 10px;
+  text-align: center;
 }
 
 .footer-content {
-    /* Styles for the footer content */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.resource-attribution,
-.social-media-links,
-.contact-information {
-    /* Styles for individual sections in the footer */
-}
-/* Reset some default styles for consistency */
-body, h1, h2, h3, p, ul, ol, li {
-    margin: 0;
-    padding: 0;
+.resource-attribution ul {
+  list-style-type: none;
+  padding: 0;
 }
 
-body {
-    font-family: 'Your Chosen Font', sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #333;
+.social-media-links a {
+  color: white;
+  margin-right: 10px;
+  text-decoration: none;
 }
 
-/* Implement responsive images with lazy loading */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    transition: opacity 0.3s ease-in-out;
-}
-
-/* Apply lazy loading to images */
-img[loading="lazy"] {
-    opacity: 0;
-}
-
-img[loading="lazy"].loaded {
-    opacity: 1;
-}
-
-/* Define common styles for sections */
-section {
-    margin: 20px 0;
-}
-
-/* Create a consistent navigation bar */
-nav {
-    background-color: #4285f4;
-    padding: 10px 0;
-    text-align: center;
-}
-
-nav a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-    font-weight: bold;
-}
-
-/* Apply wayfinding styles to navigation links */
-nav a:hover {
-    border-bottom: 2px solid #fff;
-}
-
-/* Create a clean and consistent footer */
-footer {
-    background-color: #f2f2f2;
-    padding: 20px 0;
-    text-align: center;
-}
-
-/* Style the last modified date */
-#lastModified {
-    font-style: italic;
-    color: #666;
+.contact-info p {
+  margin: 0;
 }

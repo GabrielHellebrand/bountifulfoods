@@ -3,49 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./styles/styles.css">
     <title>Bountiful Foods</title>
 </head>
 <body>
 
-<header>
-    <!-- Navigation bar with hamburger menu for smaller resolutions -->
-    <nav>
-        <!-- Your navigation links go here -->
-        <div class="hamburger-menu">&#9776;</div>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Menu</a></li>
-            <li><a href="#">About Us</a></li>
-            <!-- Add more navigation links as needed -->
-        </ul>
-    </nav>
-</header>
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="menu-icon">&#9776;</div>
+    <ul class="nav-list">
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./about-us.html">About Us</a></li>
+      <li><a href="./order-drink.html">Order Drink</a></li>
+      <li><a href="./order-confirmation.html">Order Confirmation</a></li>
+  
+    </ul>
+  </nav>
 
-<section class="hero-section">
-    <!-- Images of fruit and produce with specialty fruit drinks -->
-    <!-- Your exciting and contemporary landing page content goes here -->
-</section>
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Summary information about the coastal area of Southern California -->
+    <section class="coastal-info">
+      <h2>Coastal Area Summary</h2>
+      <p>The Coast of Southern California is filled with beautiful beaches and enjoyable sunsets, 
+        the weather is always 72 degrees and sunny, which is perfect weather for a cold and refreshing smoothie.</p>
+    </section>
 
-<section class="coastal-info">
-    <!-- Summary information about the chosen coastal area in Southern California -->
-</section>
+    <!-- Call to Action -->
+    <section class="call-to-action">
+      <h1>Make Your Own Fruit Drink Mix</h1>
+      <a href="order-drink.html">Create Your Mix</a>
+    </section>
 
-<section class="cta-section">
-    <!-- Call to action to make your own fruit drink mix -->
-    <a href="order-drink.html">Make Your Own Fruit Drink</a>
-</section>
+    <!-- Weather Card -->
+    <section class="weather-card">
+      <h2>Current Weather in Carlsbad</h2>
+      <!-- I need help getting the weather API to work properly. -->
+      <div id="weather-details"></div>
+      <div id="forecast-details"></div>
+    </section>
 
-<section class="weather-section">
-    <!-- Weather card using data from OpenWeather API -->
-    <div class="weather-card">
-        <h2>Current Weather in Carlsbad</h2>
-        <p id="temperature">Loading...</p>
-        <p id="condition">Loading...</p>
-        <p id="humidity">Loading...</p>
-    </div>
-</section>
+    <!-- Information Card about Specialty Drinks -->
+    <section class="drink-info-card">
+      <h2>Specialty Drinks</h2>
+      <!-- Information will be populated using JavaScript -->
+      
+      <p><strong>Wisdom & Knowledge</strong></p>
+      <img src="./images/Wisdom & Knowledge.png" alt="Wisdom & Knowledge" class="drink-info-card">
+      <p>Ingredients</p>
+      <p>Tomatoes</p>
+      <p>Strawberries</p>
+      <p>Bananas</p>
+      
+      <p><strong>Appletini</strong></p>
+      <img src="./images/appletini.png" alt="Appletini" class="drink-info-card">
+      <p>Ingredients</p>
+      <p>Apples</p>
+      <p>Bananas</p>
+      <p>Raspberry</p>
+      
+      <p><strong>Mango Madness</strong></p>
+      <img src="./images/Mango Madness.png" alt="Mango Madness" class="drink-info-card">
+      <p>Ingredients</p>
+      <p>Mangos</p>
+      <p>Papaya</p>
+      <p>Bananas</p>
+      
+      <p><strong>Orange You Glad I Have Pineapple</strong></p>
+      <img src="./images/Orange You Glad I Have Pineapple.png" alt="Orange You Glad I Have Pineapple" class="drink-info-card">
+      <p>Ingredients</p>
+      <p>Oranges</p>
+      <p>Pineapples</p>
+      <p>Kiwi</p>
+      
+      <p><strong>Peach Sunset</strong></p>
+      <img src="./images/peach sunset.png" alt="Peach Sunset" class="drink-info-card">
+      <p>Ingredients</p>
+      <p>Peaches</p>
+      <p>Mango</p>
+      <p>Strawberry</p>
+      
+      <p><strong>Pineapple Dream</strong></p>
+      <img src="./images/pineapple dream.png" alt="Pineapple Dream" class="drink-info-card">
+      <p>Ingredients</p>
+      <p>Pineapple</p>
+      <p>Apple</p>
+      <p>Banana</p>
+      
+      <p><strong>Merry Berry</strong></p>
+      <img src="./images/merry berry smoothie.png" alt="Merry Berry" class="drink-info-card">
+      <p>Ingredients</p>
+      <p>Raspberry</p>
+      <p>Blackberry</p>
+      <p>Blueberry</p>
+      
+      <p><strong>Summertime Sadness</strong></p>
+      <img src="./images/summertime sadness.png" alt="Summertime Sadness" class="drink-info-card">
+      <p>Ingredients</p>
+      <p>Watermelon</p>
+      <p>Strawberry</p>
+      <p>Lime</p>
 
-<script src="app.js"></script>
+
+    </section>
+  </div>
+
+  <script src="./scripts/script.js"></script>
 </body>
 </html>

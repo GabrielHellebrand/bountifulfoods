@@ -3,61 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
     <title>About Us</title>
 </head>
 <body>
 
-<header>
-    <!-- Navigation bar, similar to Home page -->
-    <!-- ... -->
-</header>
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="menu-icon">&#9776;</div>
+    <ul class="nav-list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">Menu</a></li>
+      <li><a href="order-drink.html">Order Drink</a></li>
+      <li><a href="about-us.html">About Us</a></li>
+      <!-- Add more navigation items as needed -->
+    </ul>
+  </nav>
 
-<section class="about-us-section">
+  <!-- Main Content -->
+  <div class="main-content">
     <h1>About Us</h1>
     <p>Insert historical information about the company and area here.</p>
 
-    <!-- Images that scale down at medium and small resolutions -->
-    <img src="large-image.jpg" alt="Large Image" class="large-image">
-    <img src="medium-image.jpg" alt="Medium Image" class="medium-image">
-    <img src="small-image.jpg" alt="Small Image" class="small-image">
-    
-    <!-- Google Map of Carlsbad, California -->
+    <!-- Images (replace with actual image paths) -->
+    <img src="image1.jpg" alt="Image 1" class="responsive-image">
+    <img src="image2.jpg" alt="Image 2" class="responsive-image">
+
+    <!-- Google Map (replace with your embed code) -->
     <div class="google-map">
-        <!-- Embed Google Map or use the Google Maps API -->
-        <!-- Example: <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3..."></iframe> -->
+      <!-- Add your Google Map embed code here -->
     </div>
-</section>
+  </div>
 
-<footer>
+  <!-- Footer -->
+  <footer>
     <div class="footer-content">
-        <div class="resource-attribution">
-            <p>Resources and attributions:</p>
-            <ul>
-                <li><a href="https://www.fruityvice.com" target="_blank">Fruityvice</a></li>
-                <li><a href="https://openweathermap.org" target="_blank">OpenWeatherMap</a></li>
-            </ul>
-        </div>
-
-        <div class="social-media-links">
-            <p>Connect with us:</p>
-            <!-- Add your social media links here -->
-            <a href="#" target="_blank">Facebook</a>
-            <a href="#" target="_blank">Twitter</a>
-            <a href="#" target="_blank">Instagram</a>
-        </div>
-
-        <div class="contact-information">
-            <p>Contact us:</p>
-            <p>Email: info@example.com</p>
-            <p>Phone: +1 (123) 456-7890</p>
-            <p>Address: 123 Main Street, Carlsbad, CA 92008</p>
-        </div>
+      <div class="resource-attribution">
+        <p>Resources/Attributions:</p>
+        <ul>
+          <li><a href="fruit.json" target="_blank">Fruit.json</a></li>
+          <!-- Add more attributions as needed -->
+        </ul>
+      </div>
+      
+      <!-- Social Media Links -->
+      <div class="social-media-links">
+        <a href="#" target="_blank">Facebook</a>
+        <a href="#" target="_blank">Twitter</a>
+        <a href="#" target="_blank">Instagram</a>
+        <!-- Add more social media links as needed -->
+      </div>
+      
+      <!-- Contact Information -->
+      <div class="contact-info">
+        <p>Email: example@email.com</p>
+        <p>Phone: (123) 456-7890</p>
+        <p>Address: 123 Street, City, Country</p>
+      </div>
     </div>
 
-    <div id="lastModified">Page last modified: Loading...</div>
-</footer>
+    <!-- Last Modified Date -->
+    <div id="last-modified"></div>
+  </footer>
 
-<script src="last-modified.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
