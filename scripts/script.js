@@ -1,35 +1,43 @@
+
+
 // Function to fetch weather data from OpenWeatherMap API
 async function getWeatherData() {
-    // Use the OpenWeatherMap API key
-    const apiKey = 'a210d786daa3fb047488bb9d19cf6fb5';
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Carlsbad&appid=${a210d786daa3fb047488bb9d19cf6fb5}`;
-  
-    try {
-      const response = await fetch(apiUrl);
-      const data = await response.json();
-  
-      // Populate current weather details
-      document.getElementById('weather-details').innerHTML = `
-        <p>Temperature: ${data.main.temp}°F</p>
-        <p>Condition: ${data.weather[0].description}</p>
-        <p>Humidity: ${data.main.humidity}%</p>
+  // Use the OpenWeatherMap API key
+  const apiKey = 'a210d786daa3fb047488bb9d19cf6fb5';
+  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Carlsbad&appid=${apiKey}`;
+
+  try {
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+
+    // Convert Kelvin to Fahrenheit
+    const tempFahrenheit = (data.main.temp - 273.15) * 9/5 + 32;
+
+    // Populate current weather details
+    document.getElementById('weather-details').innerHTML = `
+      <p>Temperature: ${tempFahrenheit.toFixed(0)}°F</p>
+      <p>Condition: ${data.weather[0].description}</p>
+      <p>Humidity: ${data.main.humidity}%</p>
+    `;
+
+    // Fetch and display forecast for 9:00 AM for the next three days
+    const forecastResponse = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=Carlsbad&appid=${apiKey}`);
+    const forecastData = await forecastResponse.json();
+    const forecastDetails = document.getElementById('forecast-details');
+
+    for (let i = 0; i < 24; i += 8) {
+      // Convert Kelvin to Fahrenheit for forecast data
+      const forecastTempFahrenheit = (forecastData.list[i].main.temp - 273.15) * 9/5 + 32;
+
+      forecastDetails.innerHTML += `
+        <p>${forecastData.list[i].dt_txt}: ${forecastTempFahrenheit.toFixed(0)}°F, ${forecastData.list[i].weather[0].description}</p>
       `;
-  
-      // Fetch and display forecast for 9:00 AM for the next three days
-      const forecastResponse = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=Carlsbad&appid=${a210d786daa3fb047488bb9d19cf6fb5}`);
-      const forecastData = await forecastResponse.json();
-      const forecastDetails = document.getElementById('forecast-details');
-  
-      for (let i = 8; i < 24; i += 8) {
-        forecastDetails.innerHTML += `
-          <p>${forecastData.list[i].dt_txt}: ${forecastData.list[i].weather[0].description}</p>
-        `;
-      }
-    } catch (error) {
-      console.error('Error fetching weather data:', error);
     }
+  } catch (error) {
+    console.error('Error fetching weather data:', error);
   }
-  
+}
+
   // Function to retrieve and display local drink submission information
   function getDrinkSubmissionInfo() {
     // You can use local storage or another method to store and retrieve this information
@@ -47,31 +55,28 @@ async function getWeatherData() {
   getWeatherData();
   getDrinkSubmissionInfo();
   // Add this function to fetch fruit data from fruit.json
-async function getFruitData() {
+  async function getFruitData() {
     try {
-      const response = await fetch('fruit.json');
-      const data = await response.json();
-      return data;
+        const response = await fetch('./fruit.json');
+        const data = await response.json();
+        return data;
     } catch (error) {
-      console.error('Error fetching fruit data:', error);
+        console.error('Error fetching fruit data:', error);
     }
-  }
+}
   
   // Update the function to populate the form select options
   async function populateFruitOptions() {
     const fruitData = await getFruitData();
-    const selectElements = document.querySelectorAll('.fruit-select');
-  
-    selectElements.forEach(select => {
-      fruitData.forEach(fruit => {
+    const selectElement = document.getElementById('fruit-selection');
+
+    fruitData.forEach(fruit => {
         const option = document.createElement('option');
         option.value = fruit.name;
         option.textContent = fruit.name;
-        select.appendChild(option);
-      });
+        selectElement.appendChild(option);
     });
-  }
-  
+}
   // Update the event listener for form submission
   document.getElementById('order-form').addEventListener('submit', function (event) {
     event.preventDefault();
