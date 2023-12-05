@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Smoothie shop website">
     <link rel="stylesheet" href="./styles/styles.css">
+    <script src="./scripts/script.js" defer></script>
     <title>Order Drink</title>
 </head>
 <body>
@@ -13,8 +15,9 @@
     <div class="menu-icon">&#9776;</div>
     <ul class="nav-list">
       <li><a href="index.html">Home</a></li>
-      <li><a href="#">Menu</a></li>
+      <li><a href="about-us.html">About Us</a></li>
       <li><a href="order-drink.html">Order Drink</a></li>
+      <li><a href="order-confirmation.html">Order Confirmation</a></li>
       
     </ul>
   </nav>
@@ -39,7 +42,10 @@
   
      <!-- Fruit Selection -->
 <label for="fruit-selection">Fruit Selection (Select up to 3):</label>
-<select id="fruit-selection" name="fruit-selection[]" multiple required>
+<input type="fruit" id="fruit-selection" name="fruit-selection" required>
+<input type="fruit" id="fruit-selection" name="fruit-selection" required>
+<input type="fruit" id="fruit-selection" name="fruit-selection" required>
+<select id="fruit.json" name="fruit.json[]" multiple required>
   <!-- Options will be dynamically loaded from fruit.json using JavaScript -->
       </select>
   
@@ -51,6 +57,33 @@
     </form>
   </div>
   
-  <script src="./scripts/script.js"></script>
-  </body>
+   
+
+  <footer>
+    <div class="footer-content">
+        <ul>
+          <li><a href="fruit.json" target="_blank">Fruit.json</a></li>
+        </ul>
+      </div>
+      
+      <!-- Social Media Links -->
+      <div class="social-media-links">
+        <a href="https://facebook.com" target="_blank">Facebook</a>
+        <a href="https://twitter.com" target="_blank">Twitter</a>
+        <a href="https://instagram.com" target="_blank">Instagram</a>
+        
+      </div>
+      
+      <!-- Contact Information -->
+      <div class="contact-info">
+        <p>Email: bountifulfoods@gmail.com</p>
+        <p>Phone: (760) 998-6756</p>
+        <p>Address: 822 Tamarack Ave, Carlsbad, CA</p>
+      </div>
+    </div>
+    <!-- Last Modified Date -->
+    <div id="last-modified"></div>
+    
+  </footer>
+</body>
   </html>

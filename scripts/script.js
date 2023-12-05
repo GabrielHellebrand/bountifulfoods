@@ -1,5 +1,3 @@
-
-
 // Function to fetch weather data from OpenWeatherMap API
 async function getWeatherData() {
   // Use the OpenWeatherMap API key
@@ -65,24 +63,25 @@ async function getWeatherData() {
     }
 }
   
-  // Update the function to populate the form select options
+ 
   async function populateFruitOptions() {
-    const fruitData = await getFruitData();
+    const fruitData = await getFruitData(); 
     const selectElement = document.getElementById('fruit-selection');
-
+ 
     fruitData.forEach(fruit => {
-        const option = document.createElement('option');
-        option.value = fruit.name;
-        option.textContent = fruit.name;
-        selectElement.appendChild(option);
+       const option = document.createElement('option');
+       option.value = fruit.name;
+       option.textContent = fruit.name;
+       selectElement.appendChild(option);
     });
-}
+
+  }
   // Update the event listener for form submission
   document.getElementById('order-form').addEventListener('submit', function (event) {
     event.preventDefault();
   
     // Collect form data
-    const formData = new FormData(event.target);
+    const formData = new FormData(document.getElementById('order-form'));
   
     // Build order object
     const order = {
@@ -114,7 +113,7 @@ async function getWeatherData() {
       <p><strong>Name:</strong> ${orderDetails.firstName}</p>
       <p><strong>Email:</strong> ${orderDetails.email}</p>
       <p><strong>Phone:</strong> ${orderDetails.phone}</p>
-      <p><strong>Fruits:</strong> ${orderDetails.fruits.join(', ')}</p>
+      <p><strong>Fruits:</strong> ${orderDetails.fruits.join('fruit.json')}</p>
       <p><strong>Special Instructions:</strong> ${orderDetails.specialInstructions}</p>
     `;
   }
@@ -130,6 +129,59 @@ function displayLastModifiedDate() {
     const lastModifiedDate = new Date(document.lastModified).toLocaleString();
     lastModifiedContainer.textContent = `Last Modified: ${lastModifiedDate}`;
   }
-  
+// Get the current page URL
+const currentPage = window.location.pathname;
+
+// Find the corresponding link and add the "active" class
+document.querySelectorAll('.nav-list a').forEach(link => {
+  if (link.getAttribute('href') === currentPage) {
+    link.classList.add('active');
+  }
+});
+// Function to increment and display the drink counter
+function incrementDrinkCounter() { 
+  // Get the current drink submissions count from localStorage
+  let drinkSubmissions = localStorage.getItem('drinkSubmissions') || 0;
+
+  // Increment the drink counter
+  drinkSubmissions = parseInt(drinkSubmissions, 10) + 1;
+
+  // Update the localStorage with the new drink counter value
+  localStorage.setItem('drinkSubmissions', drinkSubmissions);
+
+  // Display the updated drink counter on the page
+  document.getElementById('drink-submission-info').textContent = `You've submitted ${drinkSubmissions} specialty drinks.`;
+}
+
+// Call the function to display the initial drink counter on page load
+getDrinkSubmissionInfo();
+
+// Event listener for the form submission
+document.getElementById('order-form').addEventListener('submit', function (event) {
+  event.preventDefault(); 
+
+  // Call the function to increment and display the drink counter
+  incrementDrinkCounter();
+
+  // Collect form data and proceed with the order confirmation logic
+  const formData = new FormData(event.target);
+  const order = {
+    firstName: formData.get('first-name'),
+    email: formData.get('email'),
+    phone: formData.get('phone'),
+    fruits: [
+      formData.get('fruit1'),
+      formData.get('fruit2'),
+      formData.get('fruit3'),
+    ],
+    specialInstructions: formData.get('special-instructions'),
+  };
+
+  // Save order details in localStorage for order-confirmation page to access
+  localStorage.setItem('orderDetails', JSON.stringify(order));
+
+  // Navigate to order confirmation page
+  window.location.href = 'order-confirmation.html';
+});
   // Call the function to display last modified date when the page loads
   displayLastModifiedDate();
