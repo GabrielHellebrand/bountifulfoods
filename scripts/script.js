@@ -38,7 +38,7 @@ async function getWeatherData() {
 
   // Function to retrieve and display local drink submission information
   function getDrinkSubmissionInfo() {
-    // You can use local storage or another method to store and retrieve this information
+    // use local storage or another method to store and retrieve this information
     const drinkSubmissions = localStorage.getItem('drinkSubmissions') || 0;
     document.getElementById('drink-submission-info').textContent = `You've submitted ${drinkSubmissions} specialty drinks.`;
   }
@@ -121,7 +121,7 @@ async function getWeatherData() {
   // Populate fruit options when the page loads
   populateFruitOptions();
   
-  // Update this function to display order details on order-confirmation.html
+  // display order details on order-confirmation.html
   displayOrderDetails();
   // Function to display last modified date in the footer
 function displayLastModifiedDate() {
